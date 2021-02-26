@@ -1,0 +1,513 @@
+{
+  "CallbackList": {
+    "_type": "glue.external.echo.list.CallbackList",
+    "values": [
+      "LayerState"
+    ]
+  },
+  "CallbackList_0": {
+    "_type": "glue.external.echo.list.CallbackList",
+    "values": [
+      "HistogramLayerState"
+    ]
+  },
+  "CallbackList_1": {
+    "_type": "glue.external.echo.list.CallbackList",
+    "values": [
+      "ScatterLayerState"
+    ]
+  },
+  "CallbackList_2": {
+    "_type": "glue.external.echo.list.CallbackList",
+    "values": [
+      "ProfileLayerState"
+    ]
+  },
+  "CategoricalComponent": {
+    "_type": "glue.core.component.CategoricalComponent",
+    "log": "LoadLog",
+    "log_item": 3
+  },
+  "CategoricalComponent_0": {
+    "_type": "glue.core.component.CategoricalComponent",
+    "log": "LoadLog",
+    "log_item": 4
+  },
+  "CategoricalComponent_1": {
+    "_type": "glue.core.component.CategoricalComponent",
+    "log": "LoadLog",
+    "log_item": 5
+  },
+  "CategoricalComponent_2": {
+    "_type": "glue.core.component.CategoricalComponent",
+    "log": "LoadLog",
+    "log_item": 7
+  },
+  "CategoricalComponent_3": {
+    "_type": "glue.core.component.CategoricalComponent",
+    "log": "LoadLog",
+    "log_item": 8
+  },
+  "Component": {
+    "_type": "glue.core.component.Component",
+    "log": "LoadLog",
+    "log_item": 2
+  },
+  "Component_0": {
+    "_type": "glue.core.component.Component",
+    "log": "LoadLog",
+    "log_item": 6
+  },
+  "Component_1": {
+    "_type": "glue.core.component.Component",
+    "log": "LoadLog",
+    "log_item": 9
+  },
+  "CoordinateComponent": {
+    "_type": "glue.core.component.CoordinateComponent",
+    "axis": 0,
+    "world": false
+  },
+  "CoordinateComponent_0": {
+    "_type": "glue.core.component.CoordinateComponent",
+    "axis": 0,
+    "world": true
+  },
+  "Coordinates": {
+    "_type": "glue.core.coordinates.Coordinates"
+  },
+  "DataCollection": {
+    "_protocol": 4,
+    "_type": "glue.core.data_collection.DataCollection",
+    "cids": [
+      "Pixel Axis 0 [x]",
+      "World 0",
+      "col1",
+      "col2",
+      "col3",
+      "col4",
+      "col5",
+      "col6",
+      "col7",
+      "col8"
+    ],
+    "components": [
+      "CoordinateComponent",
+      "CoordinateComponent_0",
+      "Component",
+      "CategoricalComponent",
+      "CategoricalComponent_0",
+      "CategoricalComponent_1",
+      "Component_0",
+      "CategoricalComponent_2",
+      "CategoricalComponent_3",
+      "Component_1"
+    ],
+    "data": [
+      "dailydialog"
+    ],
+    "groups": [],
+    "links": [],
+    "subset_group_count": 1
+  },
+  "HistogramLayerState": {
+    "_type": "glue.viewers.histogram.state.HistogramLayerState",
+    "values": {
+      "alpha": 0.91,
+      "color": "st__#55aa00",
+      "layer": "dailydialog",
+      "visible": true,
+      "zorder": 1
+    }
+  },
+  "HistogramViewer": {
+    "_protocol": 1,
+    "_type": "glue.viewers.histogram.qt.data_viewer.HistogramViewer",
+    "layers": [
+      {
+        "_type": "glue.viewers.histogram.qt.layer_artist.QThreadedHistogramLayerArtist",
+        "state": "HistogramLayerState"
+      }
+    ],
+    "pos": [
+      748,
+      0
+    ],
+    "session": "Session",
+    "size": [
+      768,
+      400
+    ],
+    "state": {
+      "values": {
+        "aspect": "st__auto",
+        "common_n_bin": true,
+        "cumulative": false,
+        "hist_n_bin": 8,
+        "hist_x_max": 7.5,
+        "hist_x_min": -0.5,
+        "layers": "CallbackList_0",
+        "normalize": false,
+        "show_axes": true,
+        "x_att": "col4",
+        "x_axislabel": "st__col4",
+        "x_axislabel_size": 10,
+        "x_axislabel_weight": "st__normal",
+        "x_log": false,
+        "x_max": -0.5,
+        "x_min": 7.5,
+        "x_ticklabel_size": 8,
+        "y_axislabel": "st__Number",
+        "y_axislabel_size": 10,
+        "y_axislabel_weight": "st__normal",
+        "y_log": true,
+        "y_max": 171144.0,
+        "y_min": 0.1,
+        "y_ticklabel_size": 8
+      }
+    }
+  },
+  "LayerState": {
+    "_type": "glue.viewers.common.state.LayerState",
+    "values": {
+      "layer": "dailydialog",
+      "visible": true,
+      "zorder": 1
+    }
+  },
+  "LinearSegmentedColormap": {
+    "_type": "matplotlib.colors.LinearSegmentedColormap",
+    "cmap": "gray"
+  },
+  "LoadLog": {
+    "_protocol": 1,
+    "_type": "glue.core.data_factories.helpers.LoadLog",
+    "factory": {
+      "_type": "types.FunctionType",
+      "function": "glue.core.data_factories.tables.tabular_data"
+    },
+    "kwargs": [
+      []
+    ],
+    "path": "..\\methodology\\data\\dailydialog\\dailydialog.csv"
+  },
+  "Pixel Axis 0 [x]": {
+    "_type": "glue.core.component_id.PixelComponentID",
+    "axis": 0,
+    "label": "Pixel Axis 0 [x]"
+  },
+  "ProfileLayerState": {
+    "_type": "glue.viewers.profile.state.ProfileLayerState",
+    "values": {
+      "alpha": 0.91,
+      "attribute": "col1",
+      "color": "st__#55aa00",
+      "layer": "dailydialog",
+      "linewidth": 1,
+      "percentile": 100,
+      "v_max": 87169.0,
+      "v_min": -1.0,
+      "visible": true,
+      "zorder": 1
+    }
+  },
+  "ProfileViewer": {
+    "_protocol": 1,
+    "_type": "glue.viewers.profile.qt.data_viewer.ProfileViewer",
+    "layers": [
+      {
+        "_type": "glue.viewers.profile.qt.layer_artist.QThreadedProfileLayerArtist",
+        "state": "ProfileLayerState"
+      }
+    ],
+    "pos": [
+      0,
+      400
+    ],
+    "session": "Session",
+    "size": [
+      744,
+      380
+    ],
+    "state": {
+      "values": {
+        "aspect": "st__auto",
+        "function": "st__maximum",
+        "layers": "CallbackList_2",
+        "normalize": false,
+        "reference_data": "dailydialog",
+        "show_axes": true,
+        "x_att": "Pixel Axis 0 [x]",
+        "x_att_pixel": "Pixel Axis 0 [x]",
+        "x_axislabel": "st__Pixel Axis 0 [x]",
+        "x_axislabel_size": 10,
+        "x_axislabel_weight": "st__bold",
+        "x_log": false,
+        "x_max": 102979.5,
+        "x_min": -0.5,
+        "x_ticklabel_size": 8,
+        "y_axislabel": "st__Data values",
+        "y_axislabel_size": 10,
+        "y_axislabel_weight": "st__heavy",
+        "y_log": false,
+        "y_max": 95886.0,
+        "y_min": -8718.0,
+        "y_ticklabel_size": 8
+      }
+    }
+  },
+  "ScatterLayerState": {
+    "_type": "glue.viewers.scatter.state.ScatterLayerState",
+    "values": {
+      "alpha": 0.91,
+      "cmap": "LinearSegmentedColormap",
+      "cmap_att": "col1",
+      "cmap_mode": "st__Fixed",
+      "cmap_vmax": 87151,
+      "cmap_vmin": 0,
+      "color": "st__#55aa00",
+      "density_contrast": 1.0,
+      "density_map": true,
+      "fill": true,
+      "layer": "dailydialog",
+      "line_visible": false,
+      "linestyle": "st__solid",
+      "linewidth": 1,
+      "markers_visible": true,
+      "points_mode": "st__auto",
+      "size": 3,
+      "size_att": "col1",
+      "size_mode": "st__Fixed",
+      "size_scaling": 1,
+      "size_vmax": 87151,
+      "size_vmin": 0,
+      "stretch": "st__log",
+      "vector_arrowhead": false,
+      "vector_mode": "st__Cartesian",
+      "vector_origin": "st__middle",
+      "vector_scaling": 0.9770099572992254,
+      "vector_visible": false,
+      "visible": true,
+      "vx_att": "col1",
+      "vy_att": "col1",
+      "xerr_att": "col1",
+      "xerr_visible": false,
+      "yerr_att": "col1",
+      "yerr_visible": false,
+      "zorder": 1
+    }
+  },
+  "ScatterViewer": {
+    "_protocol": 1,
+    "_type": "glue.viewers.scatter.qt.data_viewer.ScatterViewer",
+    "layers": [
+      {
+        "_type": "glue.viewers.scatter.layer_artist.ScatterLayerArtist",
+        "state": "ScatterLayerState"
+      }
+    ],
+    "pos": [
+      745,
+      400
+    ],
+    "session": "Session",
+    "size": [
+      772,
+      379
+    ],
+    "state": {
+      "values": {
+        "aspect": "st__auto",
+        "dpi": 71.30820648960312,
+        "layers": "CallbackList_1",
+        "show_axes": true,
+        "x_att": "col4",
+        "x_axislabel": "st__col4",
+        "x_axislabel_size": 10,
+        "x_axislabel_weight": "st__normal",
+        "x_log": false,
+        "x_max": 7.82,
+        "x_min": -0.8200000000000001,
+        "x_ticklabel_size": 8,
+        "y_att": "col1",
+        "y_axislabel": "st__col1",
+        "y_axislabel_size": 10,
+        "y_axislabel_weight": "st__normal",
+        "y_log": false,
+        "y_max": 90637.04,
+        "y_min": -3486.04,
+        "y_ticklabel_size": 8
+      }
+    }
+  },
+  "Session": {
+    "_type": "glue.core.session.Session"
+  },
+  "TableViewer": {
+    "_protocol": 1,
+    "_type": "glue.viewers.table.qt.data_viewer.TableViewer",
+    "layers": [
+      {
+        "_type": "glue.viewers.table.qt.data_viewer.TableLayerArtist",
+        "state": "LayerState"
+      }
+    ],
+    "pos": [
+      0,
+      0
+    ],
+    "session": "Session",
+    "size": [
+      747,
+      400
+    ],
+    "state": {
+      "values": {
+        "layers": "CallbackList"
+      }
+    }
+  },
+  "World 0": {
+    "_type": "glue.core.component_id.ComponentID",
+    "label": "World 0"
+  },
+  "__main__": {
+    "_type": "glue.app.qt.application.GlueApplication",
+    "data": "DataCollection",
+    "plugins": [
+      "glue.plugins.coordinate_helpers",
+      "glue.viewers.histogram.qt",
+      "glue.core.data_exporters",
+      "glue.viewers.scatter.qt",
+      "glue.plugins.tools",
+      "glue.plugins.tools.pv_slicer",
+      "glue.viewers.image.qt",
+      "glue.io.formats.fits",
+      "glue.viewers.profile.qt",
+      "glue.plugins.export_d3po",
+      "glue.plugins.dendro_viewer.qt",
+      "glue.viewers.table.qt",
+      "glue.plugins.wcs_autolinking"
+    ],
+    "session": "Session",
+    "tab_names": [
+      "Tab 1"
+    ],
+    "viewers": [
+      [
+        "TableViewer",
+        "HistogramViewer",
+        "ScatterViewer",
+        "ProfileViewer"
+      ]
+    ]
+  },
+  "col1": {
+    "_type": "glue.core.component_id.ComponentID",
+    "label": "col1"
+  },
+  "col2": {
+    "_type": "glue.core.component_id.ComponentID",
+    "label": "col2"
+  },
+  "col3": {
+    "_type": "glue.core.component_id.ComponentID",
+    "label": "col3"
+  },
+  "col4": {
+    "_type": "glue.core.component_id.ComponentID",
+    "label": "col4"
+  },
+  "col5": {
+    "_type": "glue.core.component_id.ComponentID",
+    "label": "col5"
+  },
+  "col6": {
+    "_type": "glue.core.component_id.ComponentID",
+    "label": "col6"
+  },
+  "col7": {
+    "_type": "glue.core.component_id.ComponentID",
+    "label": "col7"
+  },
+  "col8": {
+    "_type": "glue.core.component_id.ComponentID",
+    "label": "col8"
+  },
+  "dailydialog": {
+    "_key_joins": [],
+    "_protocol": 5,
+    "_type": "glue.core.data.Data",
+    "components": [
+      [
+        "Pixel Axis 0 [x]",
+        "CoordinateComponent"
+      ],
+      [
+        "World 0",
+        "CoordinateComponent_0"
+      ],
+      [
+        "col1",
+        "Component"
+      ],
+      [
+        "col2",
+        "CategoricalComponent"
+      ],
+      [
+        "col3",
+        "CategoricalComponent_0"
+      ],
+      [
+        "col4",
+        "CategoricalComponent_1"
+      ],
+      [
+        "col5",
+        "Component_0"
+      ],
+      [
+        "col6",
+        "CategoricalComponent_2"
+      ],
+      [
+        "col7",
+        "CategoricalComponent_3"
+      ],
+      [
+        "col8",
+        "Component_1"
+      ]
+    ],
+    "coords": "Coordinates",
+    "label": "dailydialog",
+    "meta": {
+      "_type": "collections.OrderedDict",
+      "contents": {}
+    },
+    "primary_owner": [
+      "Pixel Axis 0 [x]",
+      "World 0",
+      "col1",
+      "col2",
+      "col3",
+      "col4",
+      "col5",
+      "col6",
+      "col7",
+      "col8"
+    ],
+    "style": {
+      "_type": "glue.core.visual.VisualAttributes",
+      "alpha": 0.91,
+      "color": "#55aa00",
+      "linestyle": "solid",
+      "linewidth": 1,
+      "marker": "o",
+      "markersize": 3
+    },
+    "subsets": [],
+    "uuid": "3347b1bc-8aca-4448-a2ed-f51b6e510a2d"
+  }
+}
