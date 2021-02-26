@@ -72,7 +72,7 @@ if __name__ == '__main__':
     emot_index = pandas.DataFrame(columns=['emotion_index'])
     count = 0
     for label in df.itertuples():
-        print(getattr(label, 'emotion_label'))
+        # print(getattr(label, 'emotion_label'))
         if getattr(label, 'emotion_label') == 'no_emotion':
             emot_index.loc[count] = tf.dtypes.cast([0], dtype=tf.int64)
         elif getattr(label, 'emotion_label') == 'anger':
@@ -93,4 +93,5 @@ if __name__ == '__main__':
 
     df.to_csv(path + '/' + path + ext)
 
+    print('Dataset Downloaded Successfully...')
     pass
