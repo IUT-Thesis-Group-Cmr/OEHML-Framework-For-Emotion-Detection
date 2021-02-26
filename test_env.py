@@ -186,7 +186,7 @@ print("Accuracy: {:2.2%}".format(acc))
 print(history.history['accuracy'])
 # print(history.history['accuracy'])
 for y in y_predict_prob:
-    print(max(y))
+    print(round(max(y)))
 
 # score_f1_micro = f1_score(test_data[1], y_predict_prob, average='micro')
 # score_f1_macro = f1_score(test_data[1], y_predict_prob, average='macro')
