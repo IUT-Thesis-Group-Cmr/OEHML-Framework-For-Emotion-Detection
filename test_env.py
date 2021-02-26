@@ -83,7 +83,7 @@ encoded_df = df.map(preprocess_text_test)
 
 """Splitting Dataset into train and test"""
 VALID_SIZE = 9268 + 6179
-BATCH_SIZE = 1000
+BATCH_SIZE = 8
 TRAIN_SIZE = 87532
 
 train_data = encoded_df.skip(VALID_SIZE)
@@ -128,9 +128,9 @@ print(test_data)
 # valid_data = valid_data.padded_batch(1, padded_shapes=max_len)
 # test_data = test_data.padded_batch(1, padded_shapes=max_len)
 
-train_data = train_data.padded_batch(10)
-valid_data = valid_data.padded_batch(10)
-test_data = test_data.padded_batch(10)
+train_data = train_data.padded_batch(BATCH_SIZE)
+valid_data = valid_data.padded_batch(BATCH_SIZE)
+test_data = test_data.padded_batch(BATCH_SIZE)
 
 train_data = configure_dataset(train_data)
 valid_data = configure_dataset(valid_data)

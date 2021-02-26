@@ -91,7 +91,7 @@ if __name__ == '__main__':
 
     df['emotion_index'] = emot_index['emotion_index']
 
-    df.to_csv(path + '/' + path + ext)
+    df.to_csv(path + '/' + 'dailydialog' + ext)
 
     print('Dataset Downloaded Successfully...')
     pass
