@@ -3,14 +3,27 @@ import pandas as pd
 import os
 import tensorflow as tf
 
+from methodology.preprocessing.StopWordsFilter import StopWordsFilter
+
+swf = StopWordsFilter()
+
 
 def preprocess_text(x):
-    for punct in '"!R&}-/<>#$%()*+:;=?@[\\]^_`|~1234567890':
-        x = x.replace(punct, ' ')
+    for punctuation in '"!&?.,}-/<>#$%\()*+:;=?@[\\]^_`|\~':
+        x = x.replace(punctuation, ' ')
 
     x = ' '.join(x.split())
     x = x.lower()
 
+    return remove_stopwords(x)
+    # return x
+
+
+def remove_stopwords(x):
+    swf.G_PATH = '../preprocessing/'
+    swf.load_filter()
+    swf.filter()
+    x = swf.clean_text(x)
     return x
 
 

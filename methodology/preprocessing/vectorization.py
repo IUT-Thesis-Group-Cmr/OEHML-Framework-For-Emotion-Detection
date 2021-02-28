@@ -96,7 +96,7 @@ def tokenize(num, text, act_label, emotion_label, speaker, conv_id, utt_id, emot
 def configure_dataset(dataset):
     """
     To optimize the accessibility of the dataset
-    by storing it in the cahche memory.
+    by storing it in the cache memory.
     :param dataset: Tensor Dataset -> Dataset to be accessed
     :return: Optimized Dataset
     """

@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\methodology\preprocessing\StopWordsFilter.py">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\methodology\preprocessing\vectorization.py">
           <value>
             <Attribute>
