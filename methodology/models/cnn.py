@@ -1,5 +1,7 @@
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Activation, Dropout, Flatten, Conv2D, MaxPooling2D, Conv1D, MaxPool1D
+from tensorflow.keras.layers import Dense, Dropout, Flatten, Conv1D, MaxPool1D
+
+from methodology.models.metrics import f1_m, precision_m, recall_m
 
 
 def create_cnn_model(input_shape=None, input_dim=None, optimizer_='RMSprop', extra_model=None):
@@ -38,41 +40,11 @@ def create_cnn_model(input_shape=None, input_dim=None, optimizer_='RMSprop', ext
     model_.add(Dense(7, activation='softmax'))
 
     if optimizer_ == 'adam':
-        model_.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer='adam')
+        model_.compile(loss='categorical_crossentropy', metrics=['accuracy', f1_m, precision_m, recall_m], optimizer='adam')
     elif optimizer_ == 'RMSprop':
-        model_.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer='RMSprop')
+        model_.compile(loss='categorical_crossentropy', metrics=['accuracy', f1_m, precision_m, recall_m], optimizer='RMSprop')
     model_.summary()
     return model_
-
-    # def test
-    # no_Of_Filters = 100
-    # size_of_Filter = (3, 3)  # THIS IS THE KERNEL THAT MOVE AROUND THE IMAGE TO GET THE FEATURES.
-    # # THIS WOULD REMOVE 2 PIXELS FROM EACH BORDER WHEN USING 32 32 IMAGE
-    # size_of_Filter2 = (3, 3)
-    # size_of_pool = (2, 2)  # SCALE DOWN ALL FEATURE MAP TO GERNALIZE MORE, TO REDUCE OVERFITTING
-    # no_Of_Nodes = 500  # NO. OF NODES IN HIDDEN LAYERS
-    # model = Sequential()
-    # model.add((Conv2D(no_Of_Filters, size_of_Filter, input_shape=(imageDimesions[0], imageDimesions[1], 1),
-    #                   activation='relu')))  # ADDING MORE CONVOLUTION LAYERS = LESS FEATURES BUT CAN CAUSE ACCURACY TO INCREASE
-    # model.add((Conv2D(no_Of_Filters, size_of_Filter, activation='relu')))
-    # model.add(MaxPooling2D(pool_size=size_of_pool))  # DOES NOT EFFECT THE DEPTH/NO OF FILTERS
-    #
-    # #     model.add((Conv2D(no_Of_Filters // 2, size_of_Filter, activation='relu')))  # ADDING MORE CONVOLUTION LAYERS = LESS FEATURES BUT CAN CAUSE ACCURACY TO INCREASE
-    # #     model.add((Conv2D(no_Of_Filters // 2, size_of_Filter, activation='relu')))
-    # #     model.add(MaxPooling2D(pool_size=size_of_pool))  # DOES NOT EFFECT THE DEPTH/NO OF FILTERS
-    #
-    # model.add((Conv2D(no_Of_Filters // 2, size_of_Filter2, activation='relu')))
-    # model.add((Conv2D(no_Of_Filters // 2, size_of_Filter2, activation='relu')))
-    # model.add(MaxPooling2D(pool_size=size_of_pool))
-    # model.add(Dropout(0.5))
-    #
-    # model.add(Flatten())
-    # model.add(Dense(no_Of_Nodes, activation='relu'))
-    # model.add(Dropout(0.5))  # INPUTS NODES TO DROP WITH EACH UPDATE 1 ALL 0 NONE
-    # model.add(Dense(noOfClasses, activation='softmax'))  # OUTPUT LAYER
-    # # COMPILE MODEL
-    # model.compile(Adam(lr=0.001), loss='categorical_crossentropy', metrics=['accuracy'])
-    # return model
 
 
 def create_nn_model(input_dim=None, input_shape=None):

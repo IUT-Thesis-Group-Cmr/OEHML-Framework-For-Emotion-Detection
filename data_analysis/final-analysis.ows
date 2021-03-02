@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme version="2.0" title="" description="">
+	<nodes>
+		<node id="0" name="CSV File Import" qualified_name="Orange.widgets.data.owcsvimport.OWCSVFileImport" project_name="Orange3" version="" title="CSV File Import" position="(150, 150)" />
+		<node id="1" name="Distributions" qualified_name="Orange.widgets.visualize.owdistributions.OWDistributions" project_name="Orange3" version="" title="Distributions" position="(348.0, 124.0)" />
+		<node id="2" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="Scatter Plot" position="(356.0, 249.0)" />
+	</nodes>
+	<links>
+		<link id="0" source_node_id="0" sink_node_id="1" source_channel="Data" sink_channel="Data" enabled="true" />
+		<link id="1" source_node_id="0" sink_node_id="2" source_channel="Data" sink_channel="Data" enabled="true" />
+	</links>
+	<annotations />
+	<thumbnail />
+	<node_properties>
+		<properties node_id="0" format="literal">{'_session_items': [('C:/Users/IUT-Cmr-Thesis-CSE/Desktop/pythonProject/methodology/data/dailydialog/dialog-with-columnNames.csv', {'encoding': 'utf-8', 'delimiter': ',', 'quotechar': '"', 'doublequote': True, 'skipinitialspace': True, 'quoting': 0, 'columntypes': [{'start': 0, 'stop': 8, 'value': 'Auto'}], 'rowspec': [{'start': 0, 'stop': 1, 'value': 'Header'}], 'decimal_separator': '.', 'group_separator': ''}), ('C:/Users/IUT-Cmr-Thesis-CSE/Desktop/pythonProject/methodology/data/dailydialog/dailydialog.csv', {'encoding': 'utf-8', 'delimiter': ',', 'quotechar': '"', 'doublequote': True, 'skipinitialspace': True, 'quoting': 0, 'columntypes': [{'start': 0, 'stop': 8, 'value': 'Auto'}], 'rowspec': [{'start': 0, 'stop': 1, 'value': 'Header'}], 'decimal_separator': '.', 'group_separator': ''})], 'controlAreaVisible': True, 'dialog_state': {'directory': 'C:/Users/IUT-Cmr-Thesis-CSE/Desktop/pythonProject/methodology/data/dailydialog', 'filter': 'Text - comma separated (*.csv, *)'}, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x02\x00\x00\x00\x00\x03*\x00\x00\x01L\x00\x00\x04U\x00\x00\x02\xad\x00\x00\x032\x00\x00\x01k\x00\x00\x04M\x00\x00\x02\xa5\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80', '__version__': 1}</properties>
+		<properties node_id="1" format="pickle">gASV0wIAAAAAAAB9lCiMCmF1dG9fYXBwbHmUiIwSY29udHJvbEFyZWFWaXNpYmxllIiMEGN1bXVs
+YXRpdmVfZGlzdHKUiYwTZml0dGVkX2Rpc3RyaWJ1dGlvbpRLAIwJaGlkZV9iYXJzlImMDWtkZV9z
+bW9vdGhpbmeUSwqME3NhdmVkV2lkZ2V0R2VvbWV0cnmUQzIB2dDLAAIAAAAAAewAAADcAAAFkwAA
+AxwAAAH0AAAA+wAABYsAAAMUAAAAAAAAAAAHgJSMCnNob3dfcHJvYnOUiYwPc3RhY2tlZF9jb2x1
+bW5zlImMC19fdmVyc2lvbl9flEsBjBBjb250ZXh0X3NldHRpbmdzlF2UKIwVb3Jhbmdld2lkZ2V0
+LnNldHRpbmdzlIwHQ29udGV4dJSTlCmBlH2UKIwGdmFsdWVzlH2UKIwEY3ZhcpSMCWFjdF9sYWJl
+bJRLZYaUjA5udW1iZXJfb2ZfYmluc5RLAEr+////hpSMCXNlbGVjdGlvbpSPlEr+////hpSMA3Zh
+cpSMDWVtb3Rpb25fbGFiZWyUS2WGlGgLSwF1jAphdHRyaWJ1dGVzlH2UKIwKVW5uYW1lZDogMJRL
+AmgWSwFoHksBjAdzcGVha2VylEsBjA1lbW90aW9uX2luZGV4lEsCdYwFbWV0YXOUfZQojAhzZW50
+ZW5jZZRLA4wHY29udl9pZJRLA4wGdXR0X2lklEsDdXViaBApgZR9lChoE32UKGgVTkr+////hpRo
+GEsASv7///+GlGgaj5RK/v///4aUaB2MDWVtb3Rpb25fbGFiZWyUS2WGlGgLSwF1aCB9lCiMClVu
+bmFtZWQ6IDCUSwKMCWFjdF9sYWJlbJRLAWgxSwGMB3NwZWFrZXKUSwGMDWVtb3Rpb25faW5kZXiU
+SwJ1aCV9lCiMCHNlbnRlbmNllEsDjAdjb252X2lklEsDjAZ1dHRfaWSUSwN1dWJldS4=
+</properties>
+		<properties node_id="2" format="pickle">gASVgQMAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMC2F1dG9fc2FtcGxllIiMEmNvbnRyb2xBcmVh
+VmlzaWJsZZSIjBNzYXZlZFdpZGdldEdlb21ldHJ5lEMyAdnQywACAAAAAAGCAAAAhwAABf0AAANx
+AAABigAAAKYAAAX1AAADaQAAAAAAAAAAB4CUjAlzZWxlY3Rpb26UTowRdG9vbHRpcF9zaG93c19h
+bGyUiIwFZ3JhcGiUfZQojAthbHBoYV92YWx1ZZRLgIwNY2xhc3NfZGVuc2l0eZSJjAtqaXR0ZXJf
+c2l6ZZRLAIwTbGFiZWxfb25seV9zZWxlY3RlZJSJjBZvcnRob25vcm1hbF9yZWdyZXNzaW9ulImM
+C3BvaW50X3dpZHRolEsKjAlzaG93X2dyaWSUiIwLc2hvd19sZWdlbmSUiIwNc2hvd19yZWdfbGlu
+ZZSJdYwLX192ZXJzaW9uX1+USwSMEGNvbnRleHRfc2V0dGluZ3OUXZQojBVvcmFuZ2V3aWRnZXQu
+c2V0dGluZ3OUjAdDb250ZXh0lJOUKYGUfZQojAZ2YWx1ZXOUfZQojAphdHRyX2NvbG9ylIwNZW1v
+dGlvbl9sYWJlbJRLZYaUjAphdHRyX2xhYmVslE5K/v///4aUjAphdHRyX3NoYXBllE5K/v///4aU
+jAlhdHRyX3NpemWUTkr+////hpSMBmF0dHJfeJSMDWVtb3Rpb25faW5kZXiUS2aGlIwGYXR0cl95
+lIwKVW5uYW1lZDogMJRLZoaUaAh9lGgTSwR1jAphdHRyaWJ1dGVzlH2UKGgqSwKMCWFjdF9sYWJl
+bJRLAWgeSwGMB3NwZWFrZXKUSwFoJ0sCdYwFbWV0YXOUfZQojAhzZW50ZW5jZZRLA4wHY29udl9p
+ZJRLA4wGdXR0X2lklEsDdXViaBgpgZR9lChoG32UKGgdjA1lbW90aW9uX2xhYmVslEtlhpRoIE5K
+/v///4aUaCJOSv7///+GlGgkTkr+////hpRoJowNZW1vdGlvbl9pbmRleJRLZoaUaCmMClVubmFt
+ZWQ6IDCUS2aGlGgIfZRoE0sEdWgtfZQoaEBLAowJYWN0X2xhYmVslEsBaDlLAYwHc3BlYWtlcpRL
+AWg+SwJ1aDF9lCiMCHNlbnRlbmNllEsDjAdjb252X2lklEsDjAZ1dHRfaWSUSwN1dWJldS4=
+</properties>
+	</node_properties>
+	<session_state>
+		<window_groups />
+	</session_state>
+</scheme>

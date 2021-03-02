@@ -1,11 +1,8 @@
 import pandas
-from tensorflow.keras import backend as K
+import matplotlib.pyplot as plt
 
 from methodology.preprocessing.vectorization import *
-
-# import tensorflow.contrib.eager as tfe
-
-# tf.enable_eager_execution()
+from methodology.models.metrics import *
 
 df = pandas.read_csv('methodology/data/dailydialog/dailydialog.csv')
 print('Dataset', df.shape, df.columns.values, sep='\n',
@@ -15,9 +12,7 @@ columns_names = df.columns.values
 features_names = columns_names[:-1]
 label_name = columns_names[-1]
 
-batch_size = 100
-
-df = tf.data.experimental.CsvDataset('methodology/data/dailydialog/dailydialog.csv', columns_names)
+df = tf.data.experimental.CsvDataset('methodology/data/dailydialog/dialog-without-columnNames.csv', columns_names)
 # df = tf.keras.utils.get_file(fname='methodology/data/dailydialog/dailydialog.csv')
 #
 # df = tf.contrib.data.make_csv_dataset(df,batch_size,column_names=columns_names,label_name=label_name, num_epochs=1)
@@ -173,26 +168,6 @@ def create_model(vb_size, num_labels):
     return model_
 
 
-def recall_m(y_true, y_predict):
-    true_positives = K.sum(K.round(K.clip(y_true * y_predict, 0, 1)))
-    possible_positives = K.sum(K.round(K.clip(y_true, 0, 1)))
-    recall = true_positives / (possible_positives + K.epsilon())
-    return recall
-
-
-def precision_m(y_true, y_predict):
-    true_positives = K.sum(K.round(K.clip(y_true * y_predict, 0, 1)))
-    predicted_positives = K.sum(K.round(K.clip(y_predict, 0, 1)))
-    precision = true_positives / (predicted_positives + K.epsilon())
-    return precision
-
-
-def f1_m(y_true, y_predict):
-    precision = precision_m(y_true, y_predict)
-    recall = recall_m(y_true, y_predict)
-    return 2 * ((precision * recall) / (precision + recall + K.epsilon()))
-
-
 model = create_model(vocab_size, 7)
 model.summary()
 model.compile(
@@ -225,3 +200,48 @@ for row, y in zip(test_data, y_predict_prob):
 # score_f1_macro = f1_score(test_data[1], y_predict_prob, average='macro')
 #
 # print(score_f1_micro, score_f1_macro)
+print(history.history.keys())
+# summarize history for accuracy
+plt.plot(history.history['accuracy'])
+plt.plot(history.history['val_accuracy'])
+plt.title('model accuracy')
+plt.ylabel('accuracy')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+
+# summarize history for loss
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+plt.title('model loss')
+plt.ylabel('loss')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+
+# summarize history for loss
+plt.plot(history.history['f1_m'])
+plt.plot(history.history['val_f1_m'])
+plt.title('Model F1-Score')
+plt.ylabel('f1_scores')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+
+# summarize history for loss
+plt.plot(history.history['precision_m'])
+plt.plot(history.history['val_precision_m'])
+plt.title('Model Precision')
+plt.ylabel('precision')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+
+# summarize history for loss
+plt.plot(history.history['recall_m'])
+plt.plot(history.history['val_recall_m'])
+plt.title('Model Recall')
+plt.ylabel('recall_m')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()

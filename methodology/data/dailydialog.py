@@ -41,18 +41,14 @@ def create_utterances(filename, split):
                 conv_id.append(split[:2] + '_c' + str(c_id))
                 utt_id.append(split[:2] + '_c' + str(c_id) + '_u' + str(u_id))
                 speakers.append(str(u_id % 2))
-
                 # u_id += 1
-
     data = pd.DataFrame(sentences, columns=['sentence'])
     data['sentence'] = data['sentence'].apply(lambda x: preprocess_text(x))
-
     data['act_label'] = act_labels
     data['emotion_label'] = emotion_labels
     data['speaker'] = speakers
     data['conv_id'] = conv_id
     data['utt_id'] = utt_id
-
     return data
 
 
