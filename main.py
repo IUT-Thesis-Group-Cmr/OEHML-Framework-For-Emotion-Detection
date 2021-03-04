@@ -10,6 +10,8 @@ from methodology.models.nbc import create_nbc_model
 from methodology.preprocessing.StopWordsFilter import StopWordsFilter
 from methodology.preprocessing.TrainTestSplit import TrainTestSplit
 from methodology.preprocessing.vectorization import TextVectorizer
+from tensorflow.python.keras.utils.vis_utils import plot_model
+
 
 if __name__ == '__main__':
     df = pandas.read_csv('methodology/data/dailydialog/dialog-with-columnNames.csv')
@@ -70,6 +72,8 @@ if __name__ == '__main__':
 
     cnn = create_cnn_model(input_shape=(x_train.shape[1], 1))
 
+    plot_model(cnn, to_file='model_plot.png', show_shapes=True, show_layer_names=True)
+
     x_train = x_train.todense()
     x_valid = x_valid.todense()
     x_test = x_test.todense()
@@ -78,9 +82,9 @@ if __name__ == '__main__':
     x_valid = np.array(x_valid)
     x_test = np.array(x_test)
 
-    x_train = x_train.reshape(x_train.shape[0], x_train.shape[1], 1)
-    x_valid = x_valid.reshape(x_valid.shape[0], x_valid.shape[1], 1)
-    x_test = x_test.reshape(x_test.shape[0], x_test.shape[1], 1)
+    x_train = x_train.reshape((x_train.shape[0], x_train.shape[1], 1))
+    x_valid = x_valid.reshape((x_valid.shape[0], x_valid.shape[1], 1))
+    x_test = x_test.reshape((x_test.shape[0], x_test.shape[1], 1))
 
     y_train = to_categorical(y_train, 7)
     y_valid = to_categorical(y_valid, 7)
@@ -90,7 +94,7 @@ if __name__ == '__main__':
     print(x_valid.shape, x_valid.ndim)
     print(x_test.shape, x_test.ndim)
 
-    history = cnn.fit(x_train, y_train, epochs=50, validation_data=(x_valid, y_valid))
+    history = cnn.fit(x_train, y_train, epochs=16, validation_data=(x_valid, y_valid))
 
     for key in history.history.keys():
         print(key, '->', history.history[key])
@@ -129,7 +133,7 @@ if __name__ == '__main__':
     plt.title('model accuracy')
     plt.ylabel('accuracy')
     plt.xlabel('epoch')
-    plt.legend(['train', 'test'], loc='upper left')
+    plt.legend(['train', 'valid'], loc='upper left')
     plt.show()
 
     # summarize history for loss
@@ -138,7 +142,7 @@ if __name__ == '__main__':
     plt.title('model loss')
     plt.ylabel('loss')
     plt.xlabel('epoch')
-    plt.legend(['train', 'test'], loc='upper left')
+    plt.legend(['train', 'valid'], loc='upper left')
     plt.show()
 
     # summarize history for f1-score
@@ -147,7 +151,7 @@ if __name__ == '__main__':
     plt.title('Model F1-Score')
     plt.ylabel('f1_scores')
     plt.xlabel('epoch')
-    plt.legend(['train', 'test'], loc='upper left')
+    plt.legend(['train', 'valid'], loc='upper left')
     plt.show()
 
     # summarize history for precision
@@ -156,7 +160,7 @@ if __name__ == '__main__':
     plt.title('Model Precision')
     plt.ylabel('precision')
     plt.xlabel('epoch')
-    plt.legend(['train', 'test'], loc='upper left')
+    plt.legend(['train', 'valid'], loc='upper left')
     plt.show()
 
     # summarize history for recall
@@ -165,5 +169,5 @@ if __name__ == '__main__':
     plt.title('Model Recall')
     plt.ylabel('recall_m')
     plt.xlabel('epoch')
-    plt.legend(['train', 'test'], loc='upper left')
+    plt.legend(['train', 'valid'], loc='upper left')
     plt.show()
